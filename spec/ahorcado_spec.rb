@@ -68,5 +68,12 @@ describe Ahorcado do
 		expect(resultado).to eq [nil, nil, nil, nil, nil, nil, nil, 'A', nil, 'O']
 	end
 
+	it 'debo de regresar mensaje despues de intentos' do 
+		ahorcado = Ahorcado.new
+		resultado = ahorcado.numIntentos(7)
+		expect(resultado).to eq "Perdiste"
+		
+	end
+
 
 end
