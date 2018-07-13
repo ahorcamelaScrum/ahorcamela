@@ -40,6 +40,11 @@ class Ahorcado
 		end
 	end
 
-
+	def numAciertos
+		aciertos=0
+		resultados = resultado.map { | letra | letra.nil? ? 0 : 1}
+		resultados.each { |i| aciertos += i }
+		aciertos
+	end
 
 end

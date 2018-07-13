@@ -75,5 +75,14 @@ describe Ahorcado do
 		
 	end
 
+	it 'ingreso dos letras y debe mostrar dos aciertos' do
+		ahorcado = Ahorcado.new
+		ahorcado.letra_valida?('o')
+		ahorcado.resultado
+		ahorcado.letra_valida?('a')
+		ahorcado.resultado
+		resultado = ahorcado.numAciertos
+		expect(resultado).to eq 2
+	end
 
 end
