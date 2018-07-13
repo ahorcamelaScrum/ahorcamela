@@ -6,7 +6,12 @@
 <body>
 <h1>Bienvenido a Ahorcamela</h1>
 <form action="/" method="POST">
-	<%= session['inputs'] %>
+	<% session['inputs'].each_with_index do |value, index| %>
+	   <input style='padding-right:5px;' value='<%= value %>' type='text' size='1' name='letra_#{index}' readonly>
+	<% end %>
+	<br>
+	Introduzca una letra <input type="text" name="letraEnviar">
+	<input type="submit" value='Enviar'>
 </form>
 
 </body>

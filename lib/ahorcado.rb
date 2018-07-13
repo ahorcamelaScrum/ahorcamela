@@ -17,14 +17,6 @@ class Ahorcado
 		return @palabra.size
 	end 
 
-	def construyeInput
-		inputs=""
-		for x in 1.. numero_de_letras
-		 inputs += "<input style='padding-right:5px;' type='text' size='2' name='letra_#{x}'>"
-		end
-		inputs
-	end
-
 	def resultado
 		@palabra.each_with_index  do |letra, index|
 			next if letra != @letra
