@@ -98,4 +98,6 @@ describe Ahorcado do
 		
 	end
 
+	
+
 end
