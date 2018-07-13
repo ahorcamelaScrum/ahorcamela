@@ -1,10 +1,11 @@
 class Ahorcado
 
+
 	def initialize
 		@palabra = 'MURCIELAGO'.split('')
 		@resultado = Array.new(@palabra.size)
 		@numIntentos = 6
-		@intentosUsuario=0
+		@intentosUsuario = 0
 	end
 
 	def letra_valida?(letra)
@@ -20,13 +21,9 @@ class Ahorcado
 			return false unless @palabra.include? @letra
 			
 		end 
-			true
+		true
 			 
 
-	end
-
-	def numero_de_letras
-		return @palabra.size
 	end
 
 	def resultado
