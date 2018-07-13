@@ -13,3 +13,10 @@ Given(/^ingresa las letras "([^"]*)"$/) do |letras|
 	end
 end
 
+
+Then(/^debo ver un albur$/) do
+	alburMostrado = find("h2").text
+	contenido = Ahorcado::ALBURES.include? alburMostrado
+	expect(contenido).to eq true  
+
+end

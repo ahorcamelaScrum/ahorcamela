@@ -1,5 +1,10 @@
 class Ahorcado
 
+	ALBURES = [
+		"Atrás se pide pero por delante se despacha",
+		"Si te duele la cabeza sientate y descansa",
+		"No me agarren el chiquito por que empieza a chillar"
+	]
 
 	def initialize
 		@palabra = 'MURCIELAGO'.split('')
@@ -54,5 +59,8 @@ class Ahorcado
 		aciertos
 	end
 
+	def albur 
+		ALBURES[rand(0..ALBURES.size() - 1)]
+	end 
 
 end

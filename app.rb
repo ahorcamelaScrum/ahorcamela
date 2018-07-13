@@ -13,8 +13,9 @@ post '/' do
 		session['inputs'] = session['ah'].resultado
 		session['albur'] = nil
 	else
-		session['albur'] = "Atrás se pide pero por delante se despacha"
-	end
+		session['albur'] = session['ah'].albur
+		end
+		
 	session['gana'] = "Haz Ganado!" if session['ah'].ganoJuego 
 	erb(:juego)
 end

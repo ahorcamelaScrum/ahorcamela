@@ -15,7 +15,7 @@ Scenario: si el usuario adivina la palabra despues de varios intentos
 Scenario: si el usuario se equivoca
 	Given que abri el juego
 	And ingresa las letras "MURS"
-	Then debo ver "Atrás se pide pero por delante se despacha"
+	Then debo ver un albur
 
 
 # Scenario: introduzco una letra
