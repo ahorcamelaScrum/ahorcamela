@@ -1,7 +1,5 @@
 class Ahorcado
 
-
-
 	def initialize
 		@palabra = 'MURCIELAGO'.split('')
 		@resultado = Array.new(@palabra.size)
@@ -24,6 +22,7 @@ class Ahorcado
 		end 
 			true
 			 
+
 	end
 
 	def numero_de_letras
@@ -39,8 +38,7 @@ class Ahorcado
 	end	
 
 	def numIntentos 
-		puts @intentosUsuario
-
+		
 		if @intentosUsuario > @numIntentos
 			return  "Perdiste"
 		else
@@ -48,9 +46,12 @@ class Ahorcado
 		end
 	end
 
-	def muestra_mensaje_despedida
-
-	end 
+	def numAciertos
+		aciertos=0
+		resultados = resultado.map { | letra | letra.nil? ? 0 : 1}
+		resultados.each { |i| aciertos += i }
+		aciertos
+	end
 
 
 end

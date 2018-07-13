@@ -86,6 +86,7 @@ describe Ahorcado do
 	end
 
 	it 'debo de regresar el mensaje de que he¡mos perdido despues de sobrepasar el número de intentos' do 
+
 		ahorcado = Ahorcado.new
 		ahorcado.letra_valida?('X')
 		ahorcado.letra_valida?('3')
@@ -96,6 +97,5 @@ describe Ahorcado do
 		expect(resultado).to eq 5
 		
 	end
-
 
 end
