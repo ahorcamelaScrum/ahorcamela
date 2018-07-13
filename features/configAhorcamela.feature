@@ -7,6 +7,11 @@ Scenario: debe de existir los espacios
 	Given que abri el juego
 	Then debo ver "Bienvenido a Ahorcamela"
 
+Scenario: si el usuario adivina la palabra
+	Given que abri el juego
+	And adivino la palabra "MURCIELAGO"
+	Then debo ver "Haz Ganado!"
+
 # Scenario: introduzco una letra
 # 	Given que abri el juego
 # 	And introduzco letra "a"

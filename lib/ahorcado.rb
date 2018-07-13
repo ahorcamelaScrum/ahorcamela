@@ -28,7 +28,7 @@ class Ahorcado
 		@palabra.each_with_index  do |letra, index|
 			next if letra != @letra
 			@resultado[index] = @letra
-		end	
+		end
 		@resultado 
 	end	
 
@@ -38,6 +38,10 @@ class Ahorcado
 		else
 			return "X"
 		end
+	end
+
+	def ganoJuego
+		@palabra == @resultado
 	end
 
 	def numAciertos

@@ -12,5 +12,6 @@ post '/' do
 	if session['ah'].letra_valida? params['letraEnviar']
 		session['inputs'] = session['ah'].resultado
 	end
+	session['gana'] = "Haz Ganado!" if session['ah'].ganoJuego 
 	erb(:juego)
 end

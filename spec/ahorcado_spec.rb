@@ -85,4 +85,29 @@ describe Ahorcado do
 		expect(resultado).to eq 2
 	end
 
+	it 'gano juego' do
+		ahorcado = Ahorcado.new
+		ahorcado.letra_valida?('M')
+		ahorcado.resultado
+		ahorcado.letra_valida?('u')
+		ahorcado.resultado
+		ahorcado.letra_valida?('r')
+		ahorcado.resultado
+		ahorcado.letra_valida?('C')
+		ahorcado.resultado
+		ahorcado.letra_valida?('i')
+		ahorcado.resultado
+		ahorcado.letra_valida?('E')
+		ahorcado.resultado
+		ahorcado.letra_valida?('l')
+		ahorcado.resultado
+		ahorcado.letra_valida?('a')
+		ahorcado.resultado
+		ahorcado.letra_valida?('g')
+		ahorcado.resultado
+		ahorcado.letra_valida?('O')
+		ahorcado.resultado
+		resultado = ahorcado.ganoJuego
+		expect(resultado).to eq true
+	end
 end
