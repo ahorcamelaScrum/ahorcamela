@@ -10,14 +10,19 @@ class Ahorcado
 	def letra_valida?(letra)
 		@letra = letra.upcase
 
+		@intentosUsuario+=1
+
 		if (@letra.size > 1 || @letra.to_i > 0) 
-			@intentosUsuario+=1
+			
 			return false
 		else
 
 			return false unless @palabra.include? @letra
+			
+		end 
 			true
-		end	 
+			 
+
 	end
 
 	def numero_de_letras
@@ -32,11 +37,12 @@ class Ahorcado
 		@resultado 
 	end	
 
-	def numIntentos intentosUsuario
-		if intentosUsuario > @numIntentos
+	def numIntentos 
+		
+		if @intentosUsuario > @numIntentos
 			return  "Perdiste"
 		else
-			return "X"
+			return @intentosUsuario
 		end
 	end
 
@@ -50,5 +56,6 @@ class Ahorcado
 		resultados.each { |i| aciertos += i }
 		aciertos
 	end
+
 
 end
