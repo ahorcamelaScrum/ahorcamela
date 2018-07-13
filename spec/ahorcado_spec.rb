@@ -13,12 +13,6 @@ describe Ahorcado do
 		expect(resultado).to eq false
 	end
 
-	it 'regresar la longitud de la palabra que se va a adivinar' do
-		ahorcado = Ahorcado.new
-		resultado = ahorcado.numero_de_letras()
-		expect(resultado).to eq 10
-	end	
-
 	it 'validar que sólo se pueda agregar una sola letra' do
 		ahorcado = Ahorcado.new
 		resultado = ahorcado.letra_valida?('aDs')
