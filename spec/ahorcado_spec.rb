@@ -37,7 +37,36 @@ describe Ahorcado do
 		ahorcado = Ahorcado.new
 		resultado = ahorcado.letra_valida?('@ %')
 		expect(resultado).to eq false
-	end	
+	end
+
+	it 'debe regresar un arreglo con la letra que se agrega' do
+		ahorcado = Ahorcado.new
+		ahorcado.letra_valida?('o')
+		resultado = ahorcado.resultado
+
+		expect(resultado).to eq [nil, nil, nil, nil, nil, nil, nil, nil, nil, 'O']
+	end
+
+
+	it 'debe regresar un arreglo sólo con una de las letra que se agrega' do
+		ahorcado = Ahorcado.new
+		ahorcado.letra_valida?('o')
+		ahorcado.resultado
+		ahorcado.letra_valida?('p')
+		resultado = ahorcado.resultado
+
+		expect(resultado).to eq [nil, nil, nil, nil, nil, nil, nil, nil, nil, 'O']
+	end
+
+	it 'debe regresar un arreglo con las dos letras que se agregan' do
+		ahorcado = Ahorcado.new
+		ahorcado.letra_valida?('o')
+		ahorcado.resultado
+		ahorcado.letra_valida?('a')
+		resultado = ahorcado.resultado
+
+		expect(resultado).to eq [nil, nil, nil, nil, nil, nil, nil, 'A', nil, 'O']
+	end
 
 
 end
