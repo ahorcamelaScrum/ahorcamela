@@ -3,26 +3,23 @@ class Ahorcado
 	def initialize
 		@palabra = 'MURCIELAGO'.split('')
 		@resultado = Array.new(@palabra.size)
-		@numIntentos = 6
-		@intentosUsuario=0
+		@numErrores = 6
+		@intentoFallido=0
 	end
 
 	def letra_valida?(letra)
 		@letra = letra.upcase
-
-		@intentosUsuario+=1
+		
 
 		if (@letra.size > 1 || @letra.to_i > 0) 
-			
 			return false
 		else
-
-			return false unless @palabra.include? @letra
-			
-		end 
+			unless @palabra.include? @letra
+				@intentoFallido+=1
+				return false
+			end			
 			true
-			 
-
+		end	 
 	end
 
 	def numero_de_letras
@@ -38,16 +35,20 @@ class Ahorcado
 	end	
 
 	def numIntentos 
-		
-		if @intentosUsuario > @numIntentos
+		if @intentoFallido >= @numErrores
 			return  "Perdiste"
-		else
-			return @intentosUsuario
 		end
 	end
 
 	def ganoJuego
-		@palabra == @resultado
+
+		if @palabra == @resultado
+			return "Has Ganado!"
+		end
+		if @intentoFallido >= @numErrores
+			return  "Has Perdido :("
+		end
+		""
 	end
 
 	def numAciertos
@@ -56,6 +57,5 @@ class Ahorcado
 		resultados.each { |i| aciertos += i }
 		aciertos
 	end
-
 
 end

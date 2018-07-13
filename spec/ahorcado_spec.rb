@@ -69,7 +69,7 @@ describe Ahorcado do
 	end
 
 
-	it 'debo de regresar el mensaje de que he¡mos perdido despues de sobrepasar el número de intentos' do 
+	it 'debo de regresar el mensaje de que perdi depues de 6 intentos fallidos' do 
 		ahorcado = Ahorcado.new
 		ahorcado.letra_valida?('X')
 		ahorcado.letra_valida?('X')
@@ -77,26 +77,12 @@ describe Ahorcado do
 		ahorcado.letra_valida?('X')
 		ahorcado.letra_valida?('X')
 		ahorcado.letra_valida?('X')
-		ahorcado.letra_valida?('X')
-		ahorcado.letra_valida?('X')
-		
 		resultado = ahorcado.numIntentos
 		expect(resultado).to eq "Perdiste"
 		
 	end
 
-	it 'debo de regresar el mensaje de que he¡mos perdido despues de sobrepasar el número de intentos' do 
 
-		ahorcado = Ahorcado.new
-		ahorcado.letra_valida?('X')
-		ahorcado.letra_valida?('3')
-		ahorcado.letra_valida?('t')
-		ahorcado.letra_valida?('X')
-		ahorcado.letra_valida?('X')
-		resultado = ahorcado.numIntentos
-		expect(resultado).to eq 5
-		
-	end
 
 	it 'gano juego' do
 		ahorcado = Ahorcado.new
@@ -121,6 +107,6 @@ describe Ahorcado do
 		ahorcado.letra_valida?('O')
 		ahorcado.resultado
 		resultado = ahorcado.ganoJuego
-		expect(resultado).to eq true
+		expect(resultado).to eq "Has Ganado!"
 	end
 end

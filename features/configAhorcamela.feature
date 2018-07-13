@@ -10,7 +10,7 @@ Scenario: debe de existir los espacios
 Scenario: si el usuario adivina la palabra
 	Given que abri el juego
 	And adivino la palabra "MURCIELAGO"
-	Then debo ver "Haz Ganado!"
+	Then debo ver "Has Ganado!"
 
 # Scenario: introduzco una letra
 # 	Given que abri el juego
