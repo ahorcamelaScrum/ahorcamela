@@ -14,8 +14,7 @@ post '/' do
 		session['albur'] = nil
 	else
 		session['albur'] = session['ah'].albur
-		end
-		
-	session['gana'] = "Haz Ganado!" if session['ah'].ganoJuego 
+	end
+	session['mensaje'] = "Has Ganado!" if session['ah'].ganoJuego 
 	erb(:juego)
 end

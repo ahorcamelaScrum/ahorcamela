@@ -4,17 +4,21 @@
 	<title>Ahorcamela</title>
 </head>
 <body>
-<h1>Bienvenido a Ahorcamela</h1>
-<form action="/" method="POST">
+<h1 align="center">Bienvenido a Ahorcamela</h1>
+<div align="center">
+<form   action="/" method="POST">
 	<% session['inputs'].each_with_index do |value, index| %>
 	   <input style='padding-right:5px;' value='<%= value %>' type='text' size='1' name='letra_#{index}' readonly>
 	<% end %>
 	<br>
+	<br>
 	Introduzca una letra <input type="text" name="letraEnviar">
 	<input type="submit" value='Enviar'>
+	<h1><%= session['mensaje'] %></h1>
 	<h1><%= session['gana'] %></h1>
-	<h2 name="control_albur"><%= session['albur'] %></h2>
+	<h2><%= session['albur'] %></h2>
 </form>
+</div>
 
 </body>
 </html>
