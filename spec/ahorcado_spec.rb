@@ -68,10 +68,32 @@ describe Ahorcado do
 		expect(resultado).to eq [nil, nil, nil, nil, nil, nil, nil, 'A', nil, 'O']
 	end
 
-	it 'debo de regresar mensaje despues de intentos' do 
+
+	it 'debo de regresar el mensaje de que he¡mos perdido despues de sobrepasar el número de intentos' do 
 		ahorcado = Ahorcado.new
-		resultado = ahorcado.numIntentos(7)
+		ahorcado.letra_valida?('X')
+		ahorcado.letra_valida?('X')
+		ahorcado.letra_valida?('X')
+		ahorcado.letra_valida?('X')
+		ahorcado.letra_valida?('X')
+		ahorcado.letra_valida?('X')
+		ahorcado.letra_valida?('X')
+		ahorcado.letra_valida?('X')
+		
+		resultado = ahorcado.numIntentos
 		expect(resultado).to eq "Perdiste"
+		
+	end
+
+	it 'debo de regresar el mensaje de que he¡mos perdido despues de sobrepasar el número de intentos' do 
+		ahorcado = Ahorcado.new
+		ahorcado.letra_valida?('X')
+		ahorcado.letra_valida?('3')
+		ahorcado.letra_valida?('t')
+		ahorcado.letra_valida?('X')
+		ahorcado.letra_valida?('X')
+		resultado = ahorcado.numIntentos
+		expect(resultado).to eq 5
 		
 	end
 
