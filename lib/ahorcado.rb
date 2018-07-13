@@ -3,26 +3,25 @@ class Ahorcado
 	def initialize
 		@palabra = 'MURCIELAGO'.split('')
 		@resultado = Array.new(@palabra.size)
+		@numIntentos = 6
+		@intentosUsuario=0
 	end
 
 	def letra_valida?(letra)
 		@letra = letra.upcase
 
-		return false if (@letra.size > 1 || @letra.to_i > 0) 
-		return false unless @palabra.include? @letra
-		true 
+		if (@letra.size > 1 || @letra.to_i > 0) 
+			@intentosUsuario+=1
+			return false
+		else
+
+			return false unless @palabra.include? @letra
+			true
+		end	 
 	end
 
 	def numero_de_letras
 		return @palabra.size
-	end 
-
-	def construyeInput
-		inputs=""
-		for x in 1.. numero_de_letras
-		 inputs += "<input style='padding-right:5px;' type='text' size='2' name='letra_#{x}'>"
-		end
-		inputs
 	end
 
 	def resultado
@@ -32,5 +31,15 @@ class Ahorcado
 		end	
 		@resultado 
 	end	
+
+	def numIntentos intentosUsuario
+		if intentosUsuario > @numIntentos
+			return  "Perdiste"
+		else
+			return "X"
+		end
+	end
+
+
 
 end
