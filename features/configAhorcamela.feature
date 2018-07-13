@@ -5,15 +5,7 @@ Feature:
 
 Scenario: debe de existir los espacios
 	Given que abri el juego
-	Then debo ver "_ _ _ _ _ _ _ _ _ _"
+	Then debo ver "Bienvenido a Ahorcamela"
 
-Scenario: debe de existir los espacios	
-	Given que abri el juego
-	When  introduci la palabra murcielago
-	Then debo ver "_ _ _ _ _ _ _ _ _ _"
 
-Scenario: debe de existir los espacios	
-	Given que abri el juego
-	When  introduci la palabra hola
-	Then debo ver "_ _ _"
 
